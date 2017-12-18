@@ -1,13 +1,9 @@
 <?php
      session_start();
      include('connect.php');
-     $id=$_GET['id'];
-     $sql = "SELECT * FROM menu WHERE m_ID='$id'";
-     // echo $sql;
+     $sql = "SELECT * from menu where menu_id='1'";
      $res = mysqli_query($conn,$sql);
      $menu = mysqli_fetch_array($res);
-     //echo $menu;
-     //die();
  ?>
 
 <!doctype html>
@@ -95,120 +91,28 @@
             </div>	
         </header> <!-- End Header Section -->
 
-        <section id="features" class="features">
-            <div class="slider_overlay">
-                <div class="container">
-                    <div class="row">
-                        <div class="main_features_content_area  wow fadeIn" data-wow-duration="3s" bg>
-                            <div class="col-md-12">
-                                <div class="col-md-6 wow slideInLeft" data-wow-duration="1s" >
-                                    <img src="assets/images/<?php echo $menu['m_gambar'] ?>">
-                                </div>
-                                <div class="col-md-6 wow slideInRight" data-wow-duration="1s">
-                                    <div class="single_features_text">
-                                        <h4>Cemilan</h4>
-                                        <p name="id" type="hidden" value="<?php echo $menu['m_ID'] ?>"></p>
-                                        <h3 value="<?php echo $menu['m_nama'] ?>"><?php echo $menu['m_nama'] ?> </h3>
-                                        <span class="text-warning" >&#9733; &#9733; &#9733; &#9733; &#9734;</span>
-                                        <p>Rp. <?php echo $menu['m_harga'] ?></p>
-                                        <p><?php echo $menu['m_detail'] ?></p>
-                                        <a  class="btn btn-primary" data-toggle="modal" data-target="#myModal">buy</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Modal -->
-        <div class="modal fade" id="myModal" role="dialog">
-            <div class="modal-dialog">
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">×</button>
-                        <h4><span class="glyphicon glyphicon-lock"></span>I want to buy this!</h4>
-                    </div>
-                    <div class="modal-body">
-                        <form role="form">
-                            <div class="form-group" align="center">
-                                <label for="psw"><span class="glyphicon glyphicon-shopping-cart"></span>How Many?</label>
-                                <input type="number" class="form-control" id="psw" placeholder="enter number of item" style="color:white">
-                            </div>
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <button type="submit" class="btn btn-block" onclick="window.location('cart.php')">Go To Cart 
-                                    <span class="glyphicon glyphicon-ok"></span>
-                                    </button>
-                                </div>
-                                <div class="col-sm-6">
-                                    <button type="submit" class="btn btn-block" data-dismiss="modal" onclick="window.location('index.php/portofolio')">Back To Shop 
-                                    <span class="glyphicon glyphicon-ok"></span>
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-
         <section id="abouts" class="abouts">
-            <div class="container">
+            <div class="container" align="center">
                 <div class="row">
                     <div class="abouts_content">
-                        <div class="single_abouts_text wow slideInRight" data-wow-duration="1s">
-                            <div class="card card-outline-secondary my-4">
-                                <h4 class="card-header">
-                                Product Reviews
-                                </h4>
-                                <div class="card-body">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
-                                    <small class="text-muted">Posted by Anonymous on 3/1/17</small>
-                                    <hr>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
-                                    <small class="text-muted">Posted by Anonymous on 3/1/17</small>
-                                    <hr>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
-                                    <small class="text-muted">Posted by Anonymous on 3/1/17</small>
-                                    <hr>
-                                    <a class="btn btn-primary" data-toggle="modal" data-target="#commentModal">Leave a Review</a>
-                                </div>
+                        <h4>Form Konfirmasi</h4>
+                        <form action="#" id="formid">
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="name" placeholder="ID Verifikasi" required ="" style="color:white">
                             </div>
-                        </div>
+
+                            <div class="form-group">
+                                <input type="file" class="form-control" name="email" placeholder="Upload Foto" required="" style="color:white">
+                            </div>
+                            <input type="submit" value="click here" action="" class="btn btn-primary" data-toggle="modal" data-target="#myModal"><!-- pasang di php -->
+                        </form> 
                     </div>
                 </div>
             </div>
         </section>
+                                               
 
-        <!-- Modal -->
-        <div class="modal fade" id="commentModal" role="dialog">
-            <div class="modal-dialog">
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">×</button>
-                        <h4><span class="glyphicon glyphicon-lock"></span>Give your feedback!</h4>
-                    </div>
-                    <div class="modal-body">
-                        <form role="form">
-                            <div class="form-group" align="center">
-                                <label for="comment"><span class="glyphicon glyphicon-user"></span>Your Comment</label>
-                                <input type="text" class="form-control" id="comment" placeholder="email" style="color:white">
-                                <input rows="3" type="text" class="form-control" id="comment" placeholder="type your comment here.." style="color:white">
-                            </div>
-                            <button type="submit" class="btn btn-block" data-dismiss="modal" data-toggle="modal" href="detail.php">Submit 
-                            <span class="glyphicon glyphicon-ok"></span>
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>                                                                  
-
-       <section id="footer_widget" class="footer_widget">
+        <section id="footer_widget" class="footer_widget">
             <div class="container">
                 <div class="row">
                     <div class="footer_widget_content text-center">

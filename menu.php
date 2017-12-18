@@ -109,11 +109,11 @@
         </header> <!-- End Header Section -->
 
         <section id="portfolio" class="portfolio">
-            <div class="container">
-                <div class="row">
+            <div class="container" align="center">
+                <div class="row" >
                     <div class="portfolio_content text-center  wow fadeIn" data-wow-duration="5s">
                         <!-- <div class="col-sm-12"> -->
-                            <div class="head_title text-center">
+                            <div class="head_title text-center" >
                                 <h4>Menu</h4>
                                 <h3>Cemilan</h3>
                             </div>
@@ -129,8 +129,8 @@
                                                 <div class="portfolio_images_overlay text-center">
                                                     <h6>'.$menu['m_nama'].'</h6>
                                                     <p class="product_price">'.$menu['m_harga'].'</p>
-                                                    <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span><br>
-                                                    <a href="detail.php?id='.$menu['m_ID'].'" class="btn btn-primary">Click here</a>
+                                                    <span class="text-warning label label-secondary">&#9733; &#9733; &#9733; &#9733; &#9734;</span><br>
+                                                    <br><a href="detail.php?id='.$menu['m_ID'].'" class="btn btn-primary">Click here</a>
                                                 </div>
                                             </div>
                                             ';

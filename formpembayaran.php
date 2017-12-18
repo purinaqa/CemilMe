@@ -79,7 +79,7 @@
 
                                     <ul class="nav navbar-nav navbar-right">
                                         <li><a href="index.php#slider">Home</a></li>
-                                        <li><a href="index.php#portfolio">Menu</a></li>
+                                        <li><a href="menu.php#portfolio">Menu</a></li>
                                         <li><a href="index.php#abouts">About Us</a></li>
                                         <li><a href="cart.php" class="booking">Cart</a></li>
                                     </ul>
@@ -98,19 +98,19 @@
                         <h4>Form Pembayaran</h4>
                         <form action="#" id="formid">
                             <div class="form-group">
-                                <input type="text" class="form-control" name="name" placeholder="Name" required ="">
+                                <input type="text" class="form-control" name="name" placeholder="Name" required ="" style="color:white">
                             </div>
 
                             <div class="form-group">
-                                <input type="email" class="form-control" name="email" placeholder="Email" required="">
+                                <input type="email" class="form-control" name="email" placeholder="Email" required="" style="color:white">
                             </div>
 
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Mobile Phone Number">
+                                <input type="text" class="form-control" placeholder="Mobile Phone Number" style="color:white">
                             </div>
 
                             <div class="form-group">
-                                <textarea class="form-control" name="address" rows="3" placeholder="Address"></textarea>
+                                <textarea class="form-control" name="address" rows="3" placeholder="Address" style="color:white"></textarea>
                             </div>
                             <div class="col-md-4">
                             <div class="single_abouts_text wow slideInRight" data-wow-duration="2s">
@@ -134,7 +134,7 @@
                             <div class="col-md-8">
                                 <div class="single_abouts_text wow slideInRight" data-wow-duration="2s">
                                     <br>
-                                    <p>TOTAL</p>
+                                    <p><b>TOTAL</b></p>
                                     <br>
                                 </div>
                             </div>
@@ -145,12 +145,45 @@
                                     <br>
                                 </div>
                             </div>
-                            <input type="submit" value="click here" class="btn btn-primary">
+                            <input type="submit" value="click here" action="" class="btn btn-primary" data-toggle="modal" data-target="#myModal"><!-- pasang di php -->
                         </form> 
                     </div>
                 </div>
             </div>
         </section>
+
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">×</button>
+                        <h4><span class="glyphicon glyphicon-lock"></span>I want to buy this!</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form role="form">
+                            <div class="form-group" align="center">
+                                <label for="psw"><span class="glyphicon glyphicon-shopping-cart"></span>How Many?</label>
+                                <input type="number" class="form-control" id="psw" placeholder="enter number of item" style="color:white">
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <button type="submit" class="btn btn-block" onclick="window.location('cart.php')">Go To Cart 
+                                    <span class="glyphicon glyphicon-ok"></span>
+                                    </button>
+                                </div>
+                                <div class="col-sm-6">
+                                    <button type="submit" class="btn btn-block" data-dismiss="modal" onclick="window.location('index.php/portofolio')">Back To Shop 
+                                    <span class="glyphicon glyphicon-ok"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
 
                                                                           
 
