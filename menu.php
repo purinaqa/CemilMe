@@ -2,8 +2,9 @@
      session_start();
      include('connect.php');
      $sql = "SELECT * from menu";
-     $res = mysqli_query($conn,$sql);
-     $menu = mysqli_fetch_array($res);
+     $result = $conn->query($sql);
+     // $res = mysqli_query($conn,$sql);
+     // $menu = mysqli_fetch_array($res);
  ?>
 
 <!doctype html>
@@ -111,7 +112,7 @@
             <div class="container">
                 <div class="row">
                     <div class="portfolio_content text-center  wow fadeIn" data-wow-duration="5s">
-                        <div class="col-md-12">
+                        <!-- <div class="col-sm-12"> -->
                             <div class="head_title text-center">
                                 <h4>Menu</h4>
                                 <h3>Cemilan</h3>
@@ -119,96 +120,27 @@
                             <div class="main_portfolio_content">
                                 <?php
                                     $i=1;
-                                    while($menu){
-                                    /*$no=$var['id'];*/
-                                    echo'
-                                        <div class="col-md-3 col-sm-4 col-xs-6 single_portfolio_text">
-                                            <img src="'.$menu['m_gambar'].'" alt="" />
-                                            <div class="portfolio_images_overlay text-center">
-                                                <h6>'.$menu['m_nama'].'></h6>
-                                                <p class="product_price">'.$menu['m_harga'].'</p>
-                                                <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span><br>
-                                                <a href="detail.php" class="btn btn-primary">Click here</a>
+                                    if ($result->num_rows > 0){
+                                        while($menu = $result->fetch_assoc()){
+                                        /*$no=$var['id'];*/
+                                        echo'
+                                            <div class="col-md-3 col-sm-4 col-xs-6 single_portfolio_text">
+                                                <img src="assets/images/'.$menu['m_gambar'].'" alt="" />
+                                                <div class="portfolio_images_overlay text-center">
+                                                    <h6>'.$menu['m_nama'].'</h6>
+                                                    <p class="product_price">'.$menu['m_harga'].'</p>
+                                                    <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span><br>
+                                                    <a href="detail.php?id='.$menu['m_ID'].'" class="btn btn-primary">Click here</a>
+                                                </div>
                                             </div>
-                                        </div>
-                                        ';
-                                    $i++; 
+                                            ';
+                                        $i++; 
+                                    }
+                                    
                                     }
                                 ?>
-                                <div class="col-md-3 col-sm-4 col-xs-6 single_portfolio_text">
-                                    <img src="assets/images/p1.png" alt="" />
-                                    <div class="portfolio_images_overlay text-center">
-                                        <h6><?php echo $menu['menu_nama'] ?></h6>
-                                        <p class="product_price"><?php echo $menu['menu_harga'] ?></p>
-                                        <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span><br>
-                                        <a href="detail.php" class="btn btn-primary">Click here</a>
-                                    </div>
-                                </div>
-                                <!-- <div class="col-md-3 col-sm-4 col-xs-6 single_portfolio_text">
-                                    <img src="assets/images/p2.png" alt="" />
-                                    <div class="portfolio_images_overlay text-center">
-                                        <h6>Italian Source Mushroom</h6>
-                                        <p class="product_price">$12</p>
-                                        <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span><br>
-                                        <a href="detail.php" class="btn btn-primary">Click here</a>
-                                    </div>                              
-                                </div>
-                                <div class="col-md-3 col-sm-4 col-xs-6 single_portfolio_text">
-                                    <img src="assets/images/p3.png" alt="" />
-                                    <div class="portfolio_images_overlay text-center">
-                                        <h6>Italian Source Mushroom</h6>
-                                        <p class="product_price">$12</p>
-                                        <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span><br>
-                                        <a href="detail.php" class="btn btn-primary">Click here</a>
-                                    </div>                              
-                                </div>
-                                <div class="col-md-3 col-sm-4 col-xs-6 single_portfolio_text">
-                                    <img src="assets/images/p4.png" alt="" />
-                                    <div class="portfolio_images_overlay text-center">
-                                        <h6>Italian Source Mushroom</h6>
-                                        <p class="product_price">$12</p>
-                                        <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span><br>
-                                        <a href="detail.php" class="btn btn-primary">Click here</a>
-                                    </div>                              
-                                </div>
-                                <div class="col-md-3 col-sm-4 col-xs-6 single_portfolio_text">
-                                    <img src="assets/images/p5.png" alt="" />
-                                    <div class="portfolio_images_overlay text-center">
-                                        <h6>Italian Source Mushroom</h6>
-                                        <p class="product_price">$12</p>
-                                        <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span><br>
-                                        <a href="detail.php" class="btn btn-primary">Click here</a>
-                                    </div>                              
-                                </div>
-                                <div class="col-md-3 col-sm-4 col-xs-6 single_portfolio_text">
-                                    <img src="assets/images/p6.png" alt="" />
-                                    <div class="portfolio_images_overlay text-center">
-                                        <h6>Italian Source Mushroom</h6>
-                                        <p class="product_price">$12</p>
-                                        <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span><br>
-                                        <a href="detail.php" class="btn btn-primary">Click here</a>
-                                    </div>                              
-                                </div>
-                                <div class="col-md-3 col-sm-4 col-xs-6 single_portfolio_text">
-                                    <img src="assets/images/p7.png" alt="" />
-                                    <div class="portfolio_images_overlay text-center">
-                                        <h6>Italian Source Mushroom</h6>
-                                        <p class="product_price">$12</p>
-                                        <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span><br>
-                                        <a href="detail.php" class="btn btn-primary">Click here</a>
-                                    </div>                              
-                                </div>
-                                <div class="col-md-3 col-sm-4 col-xs-6 single_portfolio_text">
-                                    <img src="assets/images/p8.png" alt="" />
-                                    <div class="portfolio_images_overlay text-center">
-                                        <h6>Italian Source Mushroom</h6>
-                                        <p class="product_price">$12</p>
-                                        <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span><br>
-                                        <a href="detail.php" class="btn btn-primary">Click here</a>
-                                    </div>                              
-                                </div> -->
                             </div>
-                        </div>
+                        <!-- </div> -->
                     </div>
                 </div>
             </div>
