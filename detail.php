@@ -1,9 +1,13 @@
 <?php
      session_start();
      include('connect.php');
-     $sql = "SELECT * from menu where menu_id='1'";
+     $id=$_GET['id'];
+     $sql = "SELECT * FROM menu WHERE m_ID='$id'";
+     echo $sql;
      $res = mysqli_query($conn,$sql);
      $menu = mysqli_fetch_array($res);
+     //echo $menu;
+     //die();
  ?>
 
 <!doctype html>
@@ -98,15 +102,16 @@
                         <div class="main_features_content_area  wow fadeIn" data-wow-duration="3s" bg>
                             <div class="col-md-12">
                                 <div class="col-md-6 wow slideInLeft" data-wow-duration="1s" >
-                                    <img src="assets/images/ft.png">
+                                    <img src="assets/images/<?php echo $menu['m_gambar'] ?>">
                                 </div>
                                 <div class="col-md-6 wow slideInRight" data-wow-duration="1s">
                                     <div class="single_features_text">
                                         <h4>Cemilan</h4>
-                                        <h3><?php echo $menu['menu_nama'] ?></h3>
+                                        <p name="id" value="<?php echo $menu['m_ID'] ?>"> <?php echo $menu['m_ID'] ?> </p>
+                                        <h3 value="<?php echo $menu['m_nama'] ?>"><?php echo $menu['m_nama'] ?> </h3>
                                         <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>
-                                        <p>Rp. <?php echo $menu['menu_harga'] ?></p>
-                                        <p><?php echo $menu['menu_deskripsi'] ?></p>
+                                        <p>Rp. <?php echo $menu['m_harga'] ?></p>
+                                        <p><?php echo $menu['m_detail'] ?></p>
                                         <a  class="btn btn-primary" data-toggle="modal" data-target="#myModal">buy</a>
                                     </div>
                                 </div>
