@@ -15,6 +15,8 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+
+
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -25,6 +27,7 @@
         <link rel="stylesheet" href="assets/css/bootstrap.min.css">
         <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="style.css">
         <!--        <link rel="stylesheet" href="assets/css/bootstrap-theme.min.css">-->
 
 
@@ -39,6 +42,8 @@
         <link rel="stylesheet" href="assets/css/responsive.css" />
 
         <script src="assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+
+
     </head>
     <body>
         <!--[if lt IE 8]>
@@ -55,7 +60,6 @@
 								<a href=""><i class="fa fa-phone"></i>0852 48464089</a>
 							</div>
                         </div>
-
                     </div>			
                 </div>
             </div>
@@ -132,24 +136,30 @@
                         <h4><span class="glyphicon glyphicon-lock"></span>I want to buy this!</h4>
                     </div>
                     <div class="modal-body">
-                        <form role="form">
+                        <form id="toCart" action="tocart.php" method="POST" role="form">
                             <div class="form-group" align="center">
-                                <label for="psw"><span class="glyphicon glyphicon-shopping-cart"></span>How Many?</label>
-                                <input type="number" class="form-control" id="psw" placeholder="enter number of item" style="color:white">
+                                <label for="psw"><span class="glyphicon glyphicon-shopping-cart"></span>How Many? <?php echo $menu['m_nama'] ?></label>
+                                <input name="id" type="hidden" value="<?php echo $menu['m_ID'] ?>">
+                                <input type="number" class="form-control" id="psw" name="jmlItem" placeholder="enter number of item" style="color:white">
                             </div>
                             <div class="row">
-                                <div class="col-sm-6">
-                                    <button type="submit" class="btn btn-block" onclick="window.location('cart.php')">Go To Cart 
+                                <div class="col-sm-12">
+                                    
+                                    <a type="submit" style="color:black"><button class="btn btn-block" onclick="send('toCart')" >Go To Cart
                                     <span class="glyphicon glyphicon-ok"></span>
-                                    </button>
+                                    </button></a>
+                                    
                                 </div>
-                                <div class="col-sm-6">
-                                    <button type="submit" class="btn btn-block" data-dismiss="modal" onclick="window.location('index.php/portofolio')">Back To Shop 
-                                    <span class="glyphicon glyphicon-ok"></span>
-                                    </button>
-                                </div>
+                                
                             </div>
                         </form>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <a href="menu.php" name="id" style="color:black"><button class="btn btn-block" >Back To Shop
+                                    <span class="glyphicon glyphicon-ok"></span>
+                                    </button></a>
+                                </div>
+                            </div>
                     </div>
                 </div>
             </div>
@@ -192,13 +202,28 @@
                         <button type="button" class="close" data-dismiss="modal">×</button>
                         <h4><span class="glyphicon glyphicon-lock"></span>Give your feedback!</h4>
                     </div>
-                    <div class="modal-body">
+                    <div class="modal-body" align="center">
                         <form role="form">
+
                             <div class="form-group" align="center">
-                                <label for="comment"><span class="glyphicon glyphicon-user"></span>Your Comment</label>
+                                <div class="col-md-12">
+                                    <div class="col-md-6">
+                                        <label for="comment"><span class="glyphicon glyphicon-user"></span>Your Comment</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="rate">
+                                            <input type="radio" id="star5" name="rate" value="5" /><label for="star5" title="text">5 stars</label>
+                                            <input type="radio" id="star4" name="rate" value="4" /><label for="star4" title="text">4 stars</label>
+                                            <input type="radio" id="star3" name="rate" value="3" /><label for="star3" title="text">3 stars</label>
+                                            <input type="radio" id="star2" name="rate" value="2" /><label for="star2" title="text">2 stars</label>
+                                            <input type="radio" id="star1" name="rate" value="1" /><label for="star1" title="text">1 star</label>
+                                        </div>
+                                    </div>
+                                </div>
                                 <input type="text" class="form-control" id="comment" placeholder="email" style="color:white">
                                 <input rows="3" type="text" class="form-control" id="comment" placeholder="type your comment here.." style="color:white">
                             </div>
+                            
                             <button type="submit" class="btn btn-block" data-dismiss="modal" data-toggle="modal" href="detail.php">Submit 
                             <span class="glyphicon glyphicon-ok"></span>
                             </button>

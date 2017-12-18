@@ -124,8 +124,8 @@
                                         while($menu = $result->fetch_assoc()){
                                         /*$no=$var['id'];*/
                                         echo'
-                                            <div class="col-md-3 col-sm-4 col-xs-6 single_portfolio_text">
-                                                <img src="assets/images/'.$menu['m_gambar'].'" alt="" style="width:350px;height:350px"/>
+                                            <div class="col-md-4 col-sm-4 col-xs-6 single_portfolio_text">
+                                                <img src="assets/images/'.$menu['m_gambar'].'" alt="" style="width:360px;height:350px"/>
                                                 <div class="portfolio_images_overlay text-center">
                                                     <h6>'.$menu['m_nama'].'</h6>
                                                     <p class="product_price">Rp. '.$menu['m_harga'].'</p>

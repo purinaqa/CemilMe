@@ -1,7 +1,7 @@
 <?php
      session_start();
      include('connect.php');
-     $sql = "SELECT * from menu where menu_id='1'";
+     $sql = "SELECT * from menu where m_ID='1'";
      $res = mysqli_query($conn,$sql);
      $menu = mysqli_fetch_array($res);
  ?>
@@ -98,19 +98,46 @@
                         <h4>Form Konfirmasi</h4>
                         <form action="#" id="formid">
                             <div class="form-group">
-                                <input type="text" class="form-control" name="name" placeholder="ID Verifikasi" required ="" style="color:white">
+                                <input type="text" class="form-control" name="name" placeholder="ID Pemesanan" required ="" style="color:white">
                             </div>
 
                             <div class="form-group">
-                                <input type="file" class="form-control" name="email" placeholder="Upload Foto" required="" style="color:white">
+                                <input type="file" class="form-control" name="file" placeholder="Upload Foto" required="" style="color:white">
                             </div>
-                            <input type="submit" value="click here" action="" class="btn btn-primary" data-toggle="modal" data-target="#myModal"><!-- pasang di php -->
+                            <a type="submit" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Upload Bukti Pembayaran</a><!-- pasang di php -->
                         </form> 
                     </div>
                 </div>
             </div>
         </section>
                                                
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <!-- <button type="button" class="close" data-dismiss="modal">×</button> -->
+                        <h4><span class="glyphicon glyphicon-lock"></span>Successful!</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form role="form" action="menu.php">
+                            <div class="form-group" align="center">
+                                <label for="psw"><span ></span>Thank you :)</label>
+                                <!-- <input type="number" class="form-control" id="psw" placeholder="enter number of item" style="color:white"> -->
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <button type="submit" class="btn btn-block" >Oke
+                                    <span class="glyphicon glyphicon-ok"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <section id="footer_widget" class="footer_widget">
             <div class="container">

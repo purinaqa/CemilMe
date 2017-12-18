@@ -145,7 +145,7 @@
                                     <br>
                                 </div>
                             </div>
-                            <input type="submit" value="click here" action="" class="btn btn-primary" data-toggle="modal" data-target="#myModal"><!-- pasang di php -->
+                            <a type="submit" action="" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Bayar</a><!-- pasang di php -->
                         </form> 
                     </div>
                 </div>
@@ -158,23 +158,18 @@
                 <!-- Modal content-->
                 <div class="modal-content">
                     <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">×</button>
-                        <h4><span class="glyphicon glyphicon-lock"></span>I want to buy this!</h4>
+                        <!-- <button type="button" class="close" data-dismiss="modal">×</button> -->
+                        <h4><span class="glyphicon glyphicon-lock"></span>Congratulation!</h4>
                     </div>
                     <div class="modal-body">
-                        <form role="form">
+                        <form role="form" action="menu.php">
                             <div class="form-group" align="center">
-                                <label for="psw"><span class="glyphicon glyphicon-shopping-cart"></span>How Many?</label>
-                                <input type="number" class="form-control" id="psw" placeholder="enter number of item" style="color:white">
+                                <label for="psw"><span ></span>Your orders have been recorded. Send the payment confirmation by clicking link that sent to your email.</label>
+                                <!-- <input type="number" class="form-control" id="psw" placeholder="enter number of item" style="color:white"> -->
                             </div>
                             <div class="row">
-                                <div class="col-sm-6">
-                                    <button type="submit" class="btn btn-block" onclick="window.location('cart.php')">Go To Cart 
-                                    <span class="glyphicon glyphicon-ok"></span>
-                                    </button>
-                                </div>
-                                <div class="col-sm-6">
-                                    <button type="submit" class="btn btn-block" data-dismiss="modal" onclick="window.location('index.php/portofolio')">Back To Shop 
+                                <div class="col-sm-12">
+                                    <button type="submit" class="btn btn-block" >Back To Shop 
                                     <span class="glyphicon glyphicon-ok"></span>
                                     </button>
                                 </div>

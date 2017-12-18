@@ -1,9 +1,11 @@
 <?php
      session_start();
      include('connect.php');
-     $sql = "SELECT * from menu where menu_id='1'";
-     $res = mysqli_query($conn,$sql);
-     $menu = mysqli_fetch_array($res);
+     $id=$_GET['id'];
+     $sql = "SELECT * from cart where c_id='2'";
+     $result = $conn->query($sql);
+     // echo $sql;
+     // die();
  ?>
 
 <!doctype html>
@@ -93,32 +95,52 @@
                 <div class="row">
                     <div class="abouts_content">
                         <h4>Keranjang Pesanan</h4>
-                        <div class="col-md-4">
+                        <?php
+                                    $i=1;
+                                    if ($result->num_rows > 0){
+                                        while($menu = $result->fetch_assoc()){
+                                        /*$no=$var['id'];*/
+                                        echo'
+                        <div class="col-md-3">
                             <div class="single_abouts_text wow slideInRight" data-wow-duration="2s">
                                 <br>
-                                <p>ini pesanannya</p>
+                                <p>'.$menu['c_nama'].'</p>
                             </div>
                         </div>
-                         <div class="col-md-4">
+                         <div class="col-md-3">
                             <div class="single_abouts_text wow slideInRight" data-wow-duration="2s">
                                 <br>
-                                <p>ini jumlahnya</p>
+                                <input type="number" class="form-control" id="psw" VALUE="'.$menu['c_jumlah'].'" name="jmlItem" placeholder="enter number of item" style="color:white">
                             </div>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-3">
                             <div class="single_abouts_text wow slideInRight" data-wow-duration="2s">
                                 <br>
-                                <p>ini harganya</p>
-                                <br>
+                                <p>'.$menu['c_harga'].'</p>
+                                
                             </div>
                         </div>
-                        <a  href="formpembayaran.php" class="btn btn-primary" >Check Out</a>
+                        <div class="col-md-3">
+                            <div class="single_abouts_text wow slideInRight" data-wow-duration="2s">
+                                <br>
+                                <a href="cart.php" class="btn btn-primary">Hapus</a>
+                            </div>
+                        </div>
+                        ';
+                                        $i++; 
+                                    }
+                                    }
+                                    
+                                ?>
+                        <span >
+                        <a  style="margin-top:3px" href="formpembayaran.php" class="btn btn-primary" >Check Out</a>
+                        </span>
                     </div>
                 </div>
             </div>
         </section>
 
-                                                                          
+                                                      
 
         <section id="footer_widget" class="footer_widget">
             <div class="container">
