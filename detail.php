@@ -137,38 +137,23 @@
                                 <label for="psw"><span class="glyphicon glyphicon-shopping-cart"></span>How Many?</label>
                                 <input type="number" class="form-control" id="psw">
                             </div>
-                            <button type="submit" class="btn btn-block" data-dismiss="modal" data-toggle="modal" href="#cartModal">Add to Cart 
-                            <span class="glyphicon glyphicon-ok"></span>
-                            </button>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <button type="submit" class="btn btn-block" onclick="window.location('cart.php')">Go To Cart 
+                                    <span class="glyphicon glyphicon-ok"></span>
+                                    </button>
+                                </div>
+                                <div class="col-sm-6">
+                                    <button type="submit" class="btn btn-block" data-dismiss="modal" onclick="window.location('index.php/portofolio')">Back To Shop 
+                                    <span class="glyphicon glyphicon-ok"></span>
+                                    </button>
+                                </div>
+                            </div>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
-
-        <!-- Modal -->
-        <div class="modal fade" id="cartModal" role="dialog">
-            <div class="modal-dialog">
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">×</button>
-                        <h4><span class="glyphicon glyphicon-lock"></span>I want to buy this!</h4>
-                    </div>
-                    <div class="modal-body">
-                        <form method="POST" role="form">
-                            <button type="submit" class="btn btn-block" onclick="window.location('cart.php')">Go To Cart 
-                            <span class="glyphicon glyphicon-ok"></span>
-                            </button>
-                            <button type="submit" class="btn btn-block" data-dismiss="modal" onclick="window.location('index.php/portofolio')">Back To Shop 
-                            <span class="glyphicon glyphicon-ok"></span>
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-
 
         <section id="abouts" class="abouts">
             <div class="container">
