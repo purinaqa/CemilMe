@@ -125,10 +125,10 @@
                                         /*$no=$var['id'];*/
                                         echo'
                                             <div class="col-md-3 col-sm-4 col-xs-6 single_portfolio_text">
-                                                <img src="assets/images/'.$menu['m_gambar'].'" alt="" />
+                                                <img src="assets/images/'.$menu['m_gambar'].'" alt="" style="width:350px;height:350px"/>
                                                 <div class="portfolio_images_overlay text-center">
                                                     <h6>'.$menu['m_nama'].'</h6>
-                                                    <p class="product_price">'.$menu['m_harga'].'</p>
+                                                    <p class="product_price">Rp. '.$menu['m_harga'].'</p>
                                                     <span class="text-warning label label-secondary">&#9733; &#9733; &#9733; &#9733; &#9734;</span><br>
                                                     <br><a href="detail.php?id='.$menu['m_ID'].'" class="btn btn-primary">Click here</a>
                                                 </div>

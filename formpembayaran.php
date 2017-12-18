@@ -115,21 +115,18 @@
                             <div class="col-md-4">
                             <div class="single_abouts_text wow slideInRight" data-wow-duration="2s">
                                 <br>
-                                <p>ini pesanannya</p>
                                 <p><b>Nama Pesanan</b></p>
                             </div>
                             </div>
                              <div class="col-md-4">
                                 <div class="single_abouts_text wow slideInRight" data-wow-duration="2s">
                                     <br>
-                                    <p>ini jumlahnya</p>
                                     <p><b>Jumlah Pesanan</p>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="single_abouts_text wow slideInRight" data-wow-duration="2s">
                                     <br>
-                                    <p>ini harganya</p>
                                     <p><b>Harga</p>
                                     <br>
                                 </div>
@@ -138,7 +135,6 @@
                                 <div class="single_abouts_text wow slideInRight" data-wow-duration="2s">
                                     <br>
                                     <p><b>TOTAL</b></p>
-                                    <p><b>TOTAL</p>
                                     <br>
                                 </div>
                             </div>
