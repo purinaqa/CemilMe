@@ -3,11 +3,11 @@
      include('connect.php');
      $id=$_GET['id'];
      $sql = "SELECT * FROM menu WHERE m_ID='$id'";
-     // echo $sql;
      $res = mysqli_query($conn,$sql);
      $menu = mysqli_fetch_array($res);
-     //echo $menu;
-     //die();
+
+     $sql2 = "SELECT * FROM feedback WHERE m_ID='$id'";
+     $result = $conn->query($sql2);
  ?>
 
 <!doctype html>
@@ -174,18 +174,22 @@
                                 <h4 class="card-header">
                                 Product Reviews
                                 </h4>
-                                <div class="card-body">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
-                                    <small class="text-muted">Posted by Anonymous on 3/1/17</small>
-                                    <hr>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
-                                    <small class="text-muted">Posted by Anonymous on 3/1/17</small>
-                                    <hr>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
-                                    <small class="text-muted">Posted by Anonymous on 3/1/17</small>
-                                    <hr>
-                                    <a class="btn btn-primary" data-toggle="modal" data-target="#commentModal">Leave a Review</a>
-                                </div>
+                                <?php
+                                    $i=1;
+                                    if ($result->num_rows > 0){
+                                        while($feedback = $result->fetch_assoc()){
+                                        /*$no=$var['id'];*/
+                                        echo'
+                                            <div class="card-body">
+                                                <p>'.$feedback['f_komentar'].'</p>
+                                                <small class="text-muted">Posted by '.$feedback['b_email'].'</small>
+                                                <hr>
+                                            </div>';
+                                        $i++;
+                                        }
+                                    }
+                                ?>
+                                <a class="btn btn-primary" data-toggle="modal" data-target="#commentModal">Leave a Review</a>
                             </div>
                         </div>
                     </div>
@@ -203,7 +207,7 @@
                         <h4><span class="glyphicon glyphicon-lock"></span>Give your feedback!</h4>
                     </div>
                     <div class="modal-body" align="center">
-                        <form role="form">
+                        <form role="form" id="formKomen" name="formKomen" action="komen.php" method="post">
 
                             <div class="form-group" align="center">
                                 <div class="col-md-12">
@@ -220,11 +224,11 @@
                                         </div>
                                     </div>
                                 </div>
-                                <input type="text" class="form-control" id="comment" placeholder="email" style="color:white">
-                                <input rows="3" type="text" class="form-control" id="comment" placeholder="type your comment here.." style="color:white">
+                                <input type="text" class="form-control" id="email" name="email" placeholder="email" style="color:white">
+                                <input rows="3" type="text" class="form-control" id="comment" comment="comment" placeholder="type your comment here.." style="color:white">
                             </div>
                             
-                            <button type="submit" class="btn btn-block" data-dismiss="modal" data-toggle="modal" href="detail.php">Submit 
+                            <button type="submit" class="btn btn-block" data-dismiss="modal" data-toggle="modal" onclick="send('formKomen')">Submit 
                             <span class="glyphicon glyphicon-ok"></span>
                             </button>
                         </form>
