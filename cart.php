@@ -2,7 +2,7 @@
      session_start();
      include('connect.php');
      $id=$_GET['id'];
-     $sql = "SELECT * from cart where c_id='2'";
+     $sql = "SELECT * from cart where c_id='6'";
      $result = $conn->query($sql);
      // echo $sql;
      // die();

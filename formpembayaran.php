@@ -115,33 +115,33 @@
                             <div class="col-md-4">
                             <div class="single_abouts_text wow slideInRight" data-wow-duration="2s">
                                 <br>
-                                <p><b>Nama Pesanan</b></p>
+                                <p><b>Seblak Basah</b></p>
                             </div>
                             </div>
                              <div class="col-md-4">
                                 <div class="single_abouts_text wow slideInRight" data-wow-duration="2s">
                                     <br>
-                                    <p><b>Jumlah Pesanan</p>
+                                    <p><b>2</p>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="single_abouts_text wow slideInRight" data-wow-duration="2s">
                                     <br>
-                                    <p><b>Harga</p>
+                                    <p><b>10000</p>
                                     <br>
                                 </div>
                             </div>
                             <div class="col-md-8">
                                 <div class="single_abouts_text wow slideInRight" data-wow-duration="2s">
                                     <br>
-                                    <p><b>TOTAL</b></p>
+                                    <p><b>20000</b></p>
                                     <br>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="single_abouts_text wow slideInRight" data-wow-duration="2s">
                                     <br>
-                                    <p>total harganya</p>
+                                    <p>20000</p>
                                     <br>
                                 </div>
                             </div>

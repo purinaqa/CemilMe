@@ -142,7 +142,7 @@
                                 <h3>DAPUR EMAK PEDE</h3>
                                 <p>Dapur Emak Pede merupakan sebuah akronim dari nama panggilan founder Cemil.me, yaitu Nahda, Purina, Emak, dan Pede</p>
 
-                                <p>Keempat mahasiswi tersebut sangat suka cemilan dan senang bereksperimen dalam mambuat sebuah cemilan untuk disajikan bersama teman-teman lainnya. yaa gitu lah pokonya mereka gabut aja makanya masak cemilan terus dijual. kan mayaan ye kan dapet duit juga wkwk</p>
+                                <p>Keempat mahasiswi tersebut sangat suka cemilan dan senang bereksperimen dalam mambuat sebuah cemilan untuk disajikan bersama teman-teman lainnya. </p>
                                 <!-- <a href="" class="btn btn-primary">click here</a> -->
                             </div>
                         </div>
